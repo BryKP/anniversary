@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login amore</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form onsubmit="checkPassword(event)">
+            <h1>La nostra data</h1>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="dd/mm/yy" required>
+                <i class='bx bxs-heart'></i>
+            </div>
+            <button type="submit" class="btn">Entra</button>
+            <p id="result"></p>
+        </form>
+    </div>
+
+    <script>
+        function checkPassword(event) {
+            event.preventDefault(); 
+
+            const correctPassword = "18/04/24";
+            const insert = document.getElementById("password").value;
+
+            if (insert === correctPassword) {
+                window.location.href = "home.html";
+            } else {
+                document.getElementById("result").textContent = "💔 Password sbagliata, riprova amore!";
+                document.getElementById("result").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
